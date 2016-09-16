@@ -19,13 +19,15 @@ int fibN(int n) {
 int prob2() {
 	int n=1;
 	int s=0;
-	while (1) {
-		int temp = fibN(n);
+	int temp = fibN(n);
+	while ((4000000-temp)>0) {
+		temp = fibN(n);
 		if (!(temp%2)) { s+=temp; }
-		if (temp>4000000) { return s; }
+		n++;
 	}
+	return s;
 }
 
 int main() {
-	printf("%d\n%d\n", prob1(), prob2());
+	printf("EULER\nProblem 1: %d\nProblem 2: %d\n", prob1(), prob2());
 }
